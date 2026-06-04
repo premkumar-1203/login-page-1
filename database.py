@@ -1,8 +1,14 @@
 import psycopg2
 
+import psycopg2
+
 def get_db_connection():
     return psycopg2.connect(
-        "postgresql://neondb_owner:npg_KlGO53yPsEmi@ep-blue-cloud-aobta3fd-pooler.c-2.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+        host="ep-blue-cloud-aobta3fd-pooler.c-2.ap-southeast-1.aws.neon.tech",
+        database="neondb",
+        user="neondb_owner",
+        password="npg_KlGO53yPsEmi",
+        sslmode="require"
     )
 
 
