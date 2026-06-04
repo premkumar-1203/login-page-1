@@ -2,7 +2,10 @@ import psycopg2
 
 def get_db_connection():
     return psycopg2.connect(
-        "postgresql://neondb_owner:YOUR_PASSWORD@ep-blue-cloud-aobta3fd-pooler.c-2.ap-southeast-1.aws.neon.tech/neondb?sslmode=require"
+        host="localhost",
+        database="project1",
+        user="postgres",
+        password="1234"
     )
 
 
