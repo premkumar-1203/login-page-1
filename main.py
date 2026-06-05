@@ -1,8 +1,12 @@
 from fastapi import FastAPI, Form
-from database import get_db_connection
+from database import get_db_connection, ensure_users_table
 from fastapi.responses import FileResponse
 
 app = FastAPI()
+
+@app.on_event("startup")
+def startup():
+    ensure_users_table()
 
 @app.get("/")
 async def home():
